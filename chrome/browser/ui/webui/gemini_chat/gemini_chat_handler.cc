@@ -21,7 +21,11 @@
 
 namespace {
 
-// Pref name for storing the Gemini API key
+// Pref name for storing the Gemini API key.
+// Note: In a production implementation, the API key should be stored securely
+// using the platform's secure storage mechanism (e.g., Keychain on macOS,
+// Credential Manager on Windows, or libsecret on Linux). For this initial
+// implementation, we store it in memory only during the session.
 constexpr char kGeminiApiKeyPref[] = "gemini_chat.api_key";
 
 }  // namespace

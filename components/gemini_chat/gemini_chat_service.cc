@@ -49,7 +49,7 @@ constexpr net::NetworkTrafficAnnotationTag kTrafficAnnotation =
           "identifiable information beyond the content of the messages."
         destination: GOOGLE_OWNED_SERVICE
         internal {
-          contacts { email: "nickcermin@chromium.org" }
+          contacts { email: "chromium-ai-team@google.com" }
         }
         user_data {
           type: OTHER

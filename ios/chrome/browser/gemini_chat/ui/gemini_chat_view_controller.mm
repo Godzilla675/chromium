@@ -449,23 +449,15 @@
   avatarLabel.clipsToBounds = YES;
   avatarLabel.translatesAutoresizingMaskIntoConstraints = NO;
 
-  UILabel* messageLabel = [[UILabel alloc] init];
-  messageLabel.text = content;
-  messageLabel.textColor = [UIColor whiteColor];
-  messageLabel.font = [UIFont systemFontOfSize:15];
-  messageLabel.numberOfLines = 0;
-  messageLabel.backgroundColor = isUser ? [UIColor systemBlueColor]
-                                        : [UIColor colorWithRed:0.176
-                                                          green:0.216
-                                                           blue:0.282
-                                                          alpha:1.0];
-  messageLabel.layer.cornerRadius = 12;
-  messageLabel.clipsToBounds = YES;
-  messageLabel.translatesAutoresizingMaskIntoConstraints = NO;
+  // Create message bubble with padding
+  UIColor* bubbleColor = isUser ? [UIColor systemBlueColor]
+                                : [UIColor colorWithRed:0.176
+                                                  green:0.216
+                                                   blue:0.282
+                                                  alpha:1.0];
 
-  // Add padding to message label
   UIView* paddingView = [[UIView alloc] init];
-  paddingView.backgroundColor = messageLabel.backgroundColor;
+  paddingView.backgroundColor = bubbleColor;
   paddingView.layer.cornerRadius = 12;
   paddingView.translatesAutoresizingMaskIntoConstraints = NO;
 

@@ -109,7 +109,7 @@ class GeminiChat {
     });
 
     // Listen for streaming content updates
-    if (typeof chrome !== 'undefined' && chrome.webUIListener) {
+    if (typeof cr !== 'undefined' && cr.addWebUIListener) {
       cr.addWebUIListener('streaming-content', (data) => {
         this.handleStreamingContent(data);
       });

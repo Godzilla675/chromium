@@ -30,15 +30,10 @@ void CreateAndAddGeminiChatSource(Profile* profile) {
       base::make_span(kGeminiChatResources, kGeminiChatResourcesSize),
       IDR_GEMINI_CHAT_GEMINI_CHAT_HTML);
 
-  // Add localized strings
-  source->AddLocalizedString("title", IDS_GEMINI_CHAT_TITLE);
-  source->AddLocalizedString("send", IDS_GEMINI_CHAT_SEND);
-  source->AddLocalizedString("placeholder", IDS_GEMINI_CHAT_PLACEHOLDER);
-  source->AddLocalizedString("apiKeyLabel", IDS_GEMINI_CHAT_API_KEY_LABEL);
-  source->AddLocalizedString("apiKeyPlaceholder", IDS_GEMINI_CHAT_API_KEY_PLACEHOLDER);
-  source->AddLocalizedString("selectModel", IDS_GEMINI_CHAT_SELECT_MODEL);
-  source->AddLocalizedString("newChat", IDS_GEMINI_CHAT_NEW_CHAT);
-  source->AddLocalizedString("thinking", IDS_GEMINI_CHAT_THINKING);
+  // Note: Localized strings are embedded in the HTML file.
+  // For a full production implementation, these would be added via:
+  // source->AddLocalizedString("key", IDS_GEMINI_CHAT_*);
+  // with the IDS_* constants defined in gemini_chat_strings.grdp
 
   // Allow the data source to load
   source->OverrideContentSecurityPolicy(
