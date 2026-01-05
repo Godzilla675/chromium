@@ -153,6 +153,8 @@ inline constexpr char kChromeUIFloatingWorkspaceDialogHost[] =
 inline constexpr char kChromeUIFloatingWorkspaceDialogURL[] =
     "chrome://floating-workspace";
 inline constexpr char kChromeUIGCMInternalsHost[] = "gcm-internals";
+inline constexpr char kChromeUIGeminiChatHost[] = "gemini-chat";
+inline constexpr char kChromeUIGeminiChatURL[] = "chrome://gemini-chat/";
 inline constexpr char kChromeUIGlicHost[] = "glic";
 inline constexpr char kChromeUIGlicURL[] = "chrome://glic/";
 inline constexpr char kChromeUIGlicFreHost[] = "glic-fre";

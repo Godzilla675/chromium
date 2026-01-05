@@ -1,0 +1,44 @@
+# Copyright 2024 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//build/config/features.gni")
+
+component("gemini_chat") {
+  sources = [
+    "gemini_chat_features.cc",
+    "gemini_chat_features.h",
+    "gemini_chat_service.cc",
+    "gemini_chat_service.h",
+    "gemini_chat_types.cc",
+    "gemini_chat_types.h",
+  ]
+
+  defines = [ "IS_GEMINI_CHAT_IMPL" ]
+
+  deps = [
+    "//base",
+    "//net",
+    "//services/network/public/cpp",
+    "//services/network/public/mojom",
+    "//url",
+  ]
+}
+
+source_set("unit_tests") {
+  testonly = true
+
+  sources = [
+    "gemini_chat_service_unittest.cc",
+    "gemini_chat_types_unittest.cc",
+  ]
+
+  deps = [
+    ":gemini_chat",
+    "//base",
+    "//base/test:test_support",
+    "//services/network:test_support",
+    "//services/network/public/cpp",
+    "//testing/gtest",
+  ]
+}
