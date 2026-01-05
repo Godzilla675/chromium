@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 The Chromium Authors
+     Use of this source code is governed by a BSD-style license that can be
+     found in the LICENSE file. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1a1a2e">
+
+    <!-- Header with model selector -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#16213e"
+        android:elevation="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model:"
+            android:textColor="#a0a0a0"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/model_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/transparent"
+            android:popupBackground="#16213e"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <!-- API Key Setup View -->
+    <LinearLayout
+        android:id="@+id/api_key_setup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔑"
+            android:textSize="48sp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Up Your API Key"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To use Gemini AI Chat, you need a Google API key.\n\n1. Visit Google AI Studio\n2. Create or copy your API key\n3. Paste it below"
+            android:textColor="#a0a0a0"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:layout_marginBottom="24dp" />
+
+        <EditText
+            android:id="@+id/api_key_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your Google API key..."
+            android:inputType="textPassword"
+            android:textColor="#ffffff"
+            android:textColorHint="#666666"
+            android:background="@drawable/edit_text_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/save_api_key_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Save Key"
+            android:textColor="#ffffff"
+            android:backgroundTint="#4285f4" />
+    </LinearLayout>
+
+    <!-- Chat messages area -->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/messages_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp" />
+    </ScrollView>
+
+    <!-- Progress bar -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:indeterminateTint="#4285f4" />
+
+    <!-- Input area -->
+    <LinearLayout
+        android:id="@+id/input_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:background="#16213e"
+        android:elevation="8dp">
+
+        <EditText
+            android:id="@+id/message_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Type your message..."
+            android:textColor="#ffffff"
+            android:textColorHint="#666666"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:maxLines="4"
+            android:inputType="textMultiLine"
+            android:imeOptions="actionSend"
+            android:enabled="false" />
+
+        <ImageButton
+            android:id="@+id/send_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:src="@android:drawable/ic_menu_send"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="#4285f4"
+            android:tint="#ffffff"
+            android:contentDescription="Send"
+            android:enabled="false" />
+    </LinearLayout>
+</LinearLayout>

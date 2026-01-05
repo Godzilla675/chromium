@@ -1,0 +1,6 @@
+include_rules = [
+  "+base",
+  "+net",
+  "+services/network/public",
+  "+url",
+]

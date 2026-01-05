@@ -1,0 +1,25 @@
+# Copyright 2024 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+source_set("gemini_chat") {
+  sources = [
+    "gemini_chat_handler.cc",
+    "gemini_chat_handler.h",
+    "gemini_chat_ui.cc",
+    "gemini_chat_ui.h",
+  ]
+
+  deps = [
+    "//base",
+    "//chrome/browser:browser_public_dependencies",
+    "//chrome/browser/profiles",
+    "//chrome/browser/resources/gemini_chat:resources",
+    "//chrome/common",
+    "//components/gemini_chat",
+    "//components/prefs",
+    "//content/public/browser",
+    "//services/network/public/cpp",
+    "//ui/webui",
+  ]
+}
